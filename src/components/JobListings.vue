@@ -3,12 +3,14 @@ import jobData from '../jobs.json'
 import { ref } from 'vue';  // same as useState in react
 import JobListing from './JobListing.vue';
 import { defineProps } from 'vue';
+import { RouterLink } from 'vue-router';
+
 
 defineProps({
     limit: Number,
     showBtn: {
         type: Boolean,
-        default: false 
+        default: false
     }
 });
 const jobs = ref(jobData);
@@ -27,8 +29,9 @@ const jobs = ref(jobData);
         </div>
 
         <section v-if="showBtn" class="m-auto max-w-lg my-10 px-6">
-            <a to="/jobs"
-                class="block bg-black text-white text-center py-4 px-6 rounded-xl hover:bg-gray-700">View All Jobs</a>
+            <RouterLink to="/jobs"
+                class="block bg-black text-white text-center py-4 px-6 rounded-xl cursor-pointer hover:bg-gray-700">
+                View All Jobs </RouterLink>
         </section>
     </section>
 </template>
