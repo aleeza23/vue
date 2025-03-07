@@ -15,7 +15,7 @@ const state = reactive({
 
 onMounted((async () => {
     try {
-        const res = await axios.get(`http://localhost:5000/jobs/${jobId}`);
+        const res = await axios.get(`https://vueserver-production.up.railway.app/jobs/${jobId}`);
         state.job = res.data
     } catch (error) {
         console.error("Error fetching job.", error)
