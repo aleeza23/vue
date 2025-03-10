@@ -46,7 +46,7 @@ const handleSubmit = async () => {
     }
 
     try {
-        const res = await axios.put(`/api/jobs/${jobId}`, updatedJob);
+        const res = await axios.put(`https://vueserver-production.up.railway.app/jobs/${jobId}`, updatedJob);
         toast.success('Job Updated Successfully');
         router.push(`/jobs/${res.data.id}`)
     } catch (error) {
@@ -60,7 +60,7 @@ const handleSubmit = async () => {
 // To Populate inputs
 onMounted(async () => {
     try {
-        const response = await axios.get(`/api/jobs/${jobId}`);
+        const response = await axios.get(`https://vueserver-production.up.railway.app/jobs/${jobId}`);
         state.job = response.data;
         form.type = state.job.type;
         form.title = state.job.title;

@@ -37,7 +37,7 @@ const handleSubmit = async () => {
     }
 
     try {
-        const res = await axios.post(`/api/jobs`, newJob);
+        const res = await axios.post(`https://vueserver-production.up.railway.app/jobs`, newJob);
         toast.success('Job Added Successfully');
         router.push(`/jobs/${res.data.id}`)
     } catch (error) {
